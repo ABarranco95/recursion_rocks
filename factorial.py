@@ -1,3 +1,4 @@
+  
 # You will have to figure out what parameters to include
 # 🚨 All functions must use recursion 🚨
 
@@ -5,7 +6,15 @@
 
 def factorial(n):
     # Write code here
-    pass
+    if n < 1:
+        return ('Number must be positive')
+    elif n == 1:
+        return 1
+    else:
+        result = n * factorial(n - 1)
+        return result
 
-# print(factorial(5))
+print(factorial(5))
 # => 120
+
+print(factorial(10))

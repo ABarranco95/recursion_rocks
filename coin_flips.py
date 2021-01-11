@@ -1,3 +1,4 @@
+  
 # You will have to figure out what parameters to include
 # 🚨 All functions must use recursion 🚨`
 
@@ -8,7 +9,20 @@
 
 def coin_flips(n):
     # Write code here
-    pass
+    if n < 1:
+        return ('Please flip the coin')
+    elif n == 1:
+        outcomes = ['H', 'T']
+        return outcomes
+    else:
+        possible_outcomes = ['H', 'T']
+        outcomes = []
+        for i in possible_outcomes:
+            for outcome in coin_flips(n - 1):
+                outcomes.append(outcome + i)
+        return outcomes
 
-# print(coinFlips(2)) 
+print(coin_flips(2)) 
 # => ["HH", "HT", "TH", "TT"]
+
+print(coin_flips(3)) 
